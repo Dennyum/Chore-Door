@@ -2,8 +2,14 @@ let doorImage1 = document.getElementById("door1");
 let doorImage2 = document.getElementById("door2");
 let doorImage3 = document.getElementById("door3");
 let startButton = document.getElementById("start");
+let cSelement = document.getElementById("currentStreak");
+let bSelement = document.getElementById("bestStreak");
+
 let currentlyPlaying = true;
 let numClosedDoors = 3;
+let currentStreak = 0;
+let bestStreak = 0;
+
 openDoor1 = "";
 openDoor2 = "";
 openDoor3 = "";
@@ -34,7 +40,6 @@ const playDoor = (door) => {
         gameOver("")
     }
 }
-
 
 
 const randomChoreDoorGenerator = () => {
@@ -94,11 +99,30 @@ const startRound = () => {
 const gameOver = (status) => {
     if(status === "win"){
         startButton.innerHTML = "You win! Play again?"
+        currentStreak++;
+        cSelement.innerHTML = currentStreak;
+        checkBestStreak();
+        bSelement.innerHTML = bestStreak;
     }else {
         startButton.innerHTML = "Game Over! Play again?"
+        currentStreak=0;
+        cSelement.innerHTML = currentStreak;
+        checkBestStreak();
+        bSelement.innerHTML = bestStreak;
+
     }
     currentlyPlaying = false;
 }
+
+
+const checkBestStreak = () => {
+    if(currentStreak > bestStreak) {
+        bestStreak = currentStreak
+    }
+}
+
+
+
 
 
 startRound();

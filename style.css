@@ -61,7 +61,39 @@ body {
     color: #010165;
     margin-bottom: 21px;
     cursor: pointer;
+    border-radius: 20%;
 }
+
+
+
+.scores{
+    display: inline-flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.square{
+  height: 90px;
+  width: 90px;
+  background-color: #00ffff;
+  margin: auto;
+  font-size: 80px;
+  font-family: "Work Sans";
+  border-radius: 20%;
+}
+
+.container{
+    width: auto;
+    margin: 0px 20px;
+}
+
+.container p {
+    color: white;
+    font-family: "Work Sans";
+    font-weight: bold;
+}
+
 footer{
     background-color: #00ffff;
     text-align: right;
